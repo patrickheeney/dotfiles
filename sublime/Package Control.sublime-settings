@@ -2,6 +2,10 @@
 	"installed_packages":
 	[
 		"DocBlockr",
+		"LESS",
+		"Sass",
+		"SideBarEnhancements",
+		"Terminal",
 		"Theme - Soda"
 	]
 }
