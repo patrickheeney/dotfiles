@@ -1,6 +1,8 @@
 # Project-specific files #
 ##########################
-
+*Package Control.cache
+*Package Control.last-run
+*Package Control.system-ca-bundle
 
 # Temporary files #
 ###################
