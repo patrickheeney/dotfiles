@@ -15,7 +15,7 @@
 		"*.jar",
 		"*.zip"
 	],
-	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -33,26 +33,33 @@
 		"*.suo",
 		"*.pdb",
 		"*.idb",
-		".DS_Store",
 		"*.class",
 		"*.psd",
-		"*.db"
+		"*.db",
+		".DS_Store",
+		"Desktop.ini",
+		"Thumbs.db",
+		".Spotlight-V100",
+		".Trashes"
 	],
 	"folder_exclude_patterns":
 	[
 		".svn",
 		".git",
 		".hg",
-		"CVS"
+		"CVS",
+		"node_modules"
 	],
 	"font_size": 12.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Theme - Flatland",
 		"Vintage"
 	],
 	"open_files_in_new_window": false,
 	"tab_size": 4,
-	"theme": "Soda Dark 3.sublime-theme"
+	"theme": "Spacegray.sublime-theme",
+	"word_wrap": true
 }
