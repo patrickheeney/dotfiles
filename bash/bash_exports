@@ -1,0 +1,14 @@
+# Add to default paths
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+
+# Change php path
+export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+
+# Make sublime the default editor
+export EDITOR="subl";
+
+# Change homebrew cask installation folders
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
+# Change default terminal prompt to folder $
+export PS1="\W \$"
