@@ -56,8 +56,8 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Theme - Flatland"
+		"Theme - Flatland",
+		"Vintage"
 	],
 	"open_files_in_new_window": false,
 	"tab_size": 4,

@@ -15,6 +15,9 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+# Fix anything?
+brew doctor
+
 # Some taps
 brew tap homebrew/dupes
 brew tap homebrew/versions
