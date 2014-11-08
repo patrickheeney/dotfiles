@@ -41,6 +41,7 @@ log "Starting script..."
 log "Fixing permissions"
 chmod +x install-dotfiles.sh
 chmod +x install-homebrew.sh
+chmod +x install-osx.sh
 
 #
 # Install developer tools
@@ -62,93 +63,20 @@ if ! has_program "brew"; then
   #log "Please install homebrew: http://brew.sh/"
   #exit 1
   log "Finished installing homebrew"
-else
-  log "Updating homebrew"
-  brew cleanup --force
-  brew update
-  brew upgrade
-  log "Finished updating homebrew"
 fi
 
 #
-# Run the homebrew script
+# Run the osx script
 #
-log "Running homebrew script"
-$DIR/install-homebrew.sh
-
-#
-# Check if Git is installed
-#
-log "Checking for git"
-if ! has_program "git"; then
-  log "Installing Git"
-  brew install git
-fi
-
-#
-# Check if node is installed
-#
-log "Checking for node"
-if ! has_program "node"; then
-  log "Installing Node"
-  brew install node
-fi
-
-#
-# NPM
-#
-#log "Checking for npm"
-#if ! has_program "npm"; then
-#  log "Updating npm"
-#  npm install -g npm@latest
-#fi
-
-#
-# Bower
-#
-log "Checking for bower"
-if ! has_program "bower"; then
-  log "Installing Bower"
-  npm install -g bower
-fi
-
-#
-# Grunt
-#
-log "Checking for grunt"
-if ! has_program "grunt"; then
-  log "Installing Grunt"
-  npm install -g grunt-cli
-fi
-
-#
-# Gulp
-#
-log "Checking for gulp"
-if ! has_program "gulp"; then
-  log "Installing Gulp"
-  npm install -g gulp
-fi
-
-#
-# Update NPM
-#
-log "Updating global npm"
-npm cache clean
-# https://github.com/npm/npm/issues/6247
-# npm update -g
-for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
-do
-  npm -g install "$package"
-done
+log "Running osx script"
+$DIR/install-osx.sh
 
 #
 # Install dotfiles
 #
 if [[ ! -f ~/.bash_functions ]]; then
   log "Installing dotfiles"
-  #git clone git@github.com:patrickheeney/dotfiles.git ~/dotfiles
-  ~/dotfiles/install-dotfiles.sh
+  $DIR/install-dotfiles.sh
 fi
 
 #

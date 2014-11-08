@@ -1,0 +1,17 @@
+# Reset paths to default
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+
+# Add homebrew paths to the $PATH
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Add ~/dotfiles/bin to the $PATH
+export PATH="$HOME/dotfiles/bin:$PATH"
+
+# Add coreutils to the $PATH
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Change php path
+#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+# https://github.com/Homebrew/homebrew-php/issues/372
+export PATH="#{HOMEBREW_PREFIX}/bin:$PATH"

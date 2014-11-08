@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Current dir
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -30,3 +30,6 @@ done
 #f [[ `uname` == 'Darwin' ]]; then
 #  link "$DIR/sublime/Packages/User/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 #fi
+
+# Reset settings
+source ~/.bash_profile

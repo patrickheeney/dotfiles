@@ -48,6 +48,10 @@ xcuserdata
 *.moved-aside
 DerivedData
 
+# PHPStorm #
+############
+.idea
+
 # SublimeText project files #
 #############################
 /*.sublime-project

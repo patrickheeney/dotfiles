@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
 
 # 
 # Install tools using Homebrew
@@ -9,17 +9,11 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-# Clean things
-brew cleanup --force
-
 # Make sure we're using the latest Homebrew
 brew update
 
 # Upgrade any already-installed formulae
 brew upgrade
-
-# Fix anything?
-brew doctor
 
 # Some taps
 brew tap homebrew/dupes
@@ -52,11 +46,13 @@ brew install vim --override-system-vi
 brew install grep
 brew install screen
 
-# Install PHP 5.5
-brew tap josegonzalez/homebrew-php
-brew install php55
+# Install PHP
+brew tap homebrew/homebrew-php
+#brew install php55
+brew install php56
 brew install mcrypt
-brew install php55-mcrypt
+#brew install php55-mcrypt
+brew install php56-mcrypt
 brew install composer
 
 # Install other useful binaries
@@ -77,11 +73,26 @@ brew install unrar
 # installation method.
 brew install node
 
+# install npm tools
+#npm install -g grunt-cli
+#npm install -g gulp
+#npm install -g bower
+
+#
+# Start stuff
+#
+
+# start php56 at login
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+
+# load php56 now
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+
 # 
 # Install native apps
 # 
 
-:'
+<<COMMENT1
 brew tap caskroom/cask
 brew tap caskroom/versions
 
@@ -124,7 +135,10 @@ brew cask install transmit
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
-'
+COMMENT1
 
 # Remove outdated versions from the cellar
-brew cleanup
+brew cleanup --force
+
+# Fix anything?
+brew doctor
