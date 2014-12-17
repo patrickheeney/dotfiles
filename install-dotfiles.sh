@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Notes
-# http://mywiki.wooledge.org/BashPitfalls#for_i_in_.24.28ls_.2A.mp3.29
+# http://askubuntu.com/questions/343727/filenames-with-spaces-breaking-for-loop-find-command
 # ${string##substring} - Deletes longest match of $substring from front of $string.
 # ${string%substring} - Deletes shortest match of $substring from back of $string.
 
