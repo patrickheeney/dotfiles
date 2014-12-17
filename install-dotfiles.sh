@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# Notes
+# http://mywiki.wooledge.org/BashPitfalls#for_i_in_.24.28ls_.2A.mp3.29
+# ${string##substring} - Deletes longest match of $substring from front of $string.
+# ${string%substring} - Deletes shortest match of $substring from back of $string.
+
 # Current dir
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-echo "Symlinking dotfiles from $DIR"
 
 link() {
   from="$1"
@@ -13,23 +16,27 @@ link() {
   ln -s "$from" "$to"
 }
 
+echo "Symlinking dotfiles from $DIR"
+
 # Symlink bash files
-for location in $(find bash -type f -name '*'); do
+find bash -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   file="${location##*/}"
-  file=".${file%.sh}"
+  file=".${file}"
   link "$DIR/$location" "$HOME/$file"
 done
 
 # Symlink git files
-for location in $(find git -type f -name '*'); do
+find git -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   file="${location##*/}"
-  file=".${file%.sh}"
+  file=".${file}"
   link "$DIR/$location" "$HOME/$file"
 done
 
-#f [[ `uname` == 'Darwin' ]]; then
-#  link "$DIR/sublime/Packages/User/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-#fi
+# Symlink sublime settings
+find sublime -type f -name '*.sublime*' -print0 | while IFS= read -r -d '' location; do
+  file="${location##*/}"
+  link "$DIR/$location" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/$file"
+done
 
 # Reset settings
 source ~/.bash_profile
