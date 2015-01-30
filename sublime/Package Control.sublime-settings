@@ -1,4 +1,12 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
 		"DashDoc",
@@ -6,6 +14,7 @@
 		"DocBlockr",
 		"EditorConfig",
 		"LESS",
+		"Package Control",
 		"Phpcs",
 		"Sass",
 		"SideBarEnhancements",

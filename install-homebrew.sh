@@ -103,6 +103,7 @@ brew cask install adobe-reader
 brew cask install alfred
 brew cask install appcleaner
 brew cask install arq
+brew cask install beyond-compare
 brew cask install calibre
 brew cask install cleanmymac
 brew cask install colloquy
