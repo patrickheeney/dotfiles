@@ -41,6 +41,7 @@ log "Starting script..."
 log "Fixing permissions"
 chmod +x install-dotfiles.sh
 chmod +x install-homebrew.sh
+chmod +x install-python.sh
 chmod +x install-osx.sh
 
 #
@@ -63,6 +64,14 @@ if ! has_program "brew"; then
   #log "Please install homebrew: http://brew.sh/"
   #exit 1
   log "Finished installing homebrew"
+fi
+
+#
+# Install python
+#
+if [[ ! -f ~/.bash_functions ]]; then
+  log "Installing python"
+  $DIR/install-python.sh
 fi
 
 #

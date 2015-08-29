@@ -3,7 +3,7 @@
 # 
 # Install tools using Homebrew
 # 
-# Usage: ./homebrew/install.sh
+# Usage: ./install-homebrew.sh
 # 
 
 # Ask for the administrator password upfront.
@@ -47,7 +47,7 @@ brew install grep
 brew install screen
 
 # Install PHP
-brew tap homebrew/homebrew-php
+#brew tap homebrew/homebrew-php
 #brew install php55
 brew install php56
 brew install mcrypt
@@ -57,6 +57,7 @@ brew install composer
 
 # Install other useful binaries
 brew install ack
+brew install exiftools
 brew install git
 #brew install imagemagick --with-webp
 # brew install p7zip
@@ -69,24 +70,37 @@ brew install tree
 brew install unrar
 #brew install zopfli
 
-# Install Node.js. Note: this installs `npm` too, using the recommended
-# installation method.
-brew install node
+# Install nvm
+brew install nvm
 
-# install npm tools
+# Install node stable
+nvm install stable
+
+# Set the default to stable
+nvm alias default stable
+
+# Install npm
+npm install -g npm@latest
+
+# Install npm tools
 #npm install -g grunt-cli
-#npm install -g gulp
-#npm install -g bower
+npm install -g gulp
+npm install -g bower
+
+# NVM install
+
+mkdir ~/.nvm
+cp $(brew --prefix nvm)/nvm-exec ~/.nvm/
 
 #
 # Start stuff
 #
 
 # start php56 at login
-ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+#ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
 
 # load php56 now
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+#launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 
 # 
 # Install native apps
@@ -143,3 +157,4 @@ brew cleanup --force
 
 # Fix anything?
 brew doctor
+brew prune
