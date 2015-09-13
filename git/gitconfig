@@ -12,6 +12,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
+	editor = nano
 
 [hub]
 	protocol = https

@@ -39,10 +39,7 @@ log "Starting script..."
 # Fix permissions
 #
 log "Fixing permissions"
-chmod +x install-dotfiles.sh
-chmod +x install-homebrew.sh
-chmod +x install-python.sh
-chmod +x install-osx.sh
+chmod -R +x install/
 
 #
 # Install developer tools
@@ -67,26 +64,28 @@ if ! has_program "brew"; then
 fi
 
 #
-# Install python
-#
-if [[ ! -f ~/.bash_functions ]]; then
-  log "Installing python"
-  $DIR/install-python.sh
-fi
-
-#
-# Run the osx script
+# Install osx config
 #
 log "Running osx script"
-$DIR/install-osx.sh
+$DIR/install/osx.sh
 
 #
 # Install dotfiles
 #
-if [[ ! -f ~/.bash_functions ]]; then
-  log "Installing dotfiles"
-  $DIR/install-dotfiles.sh
-fi
+log "Installing dotfiles"
+$DIR/install/dotfiles.sh
+
+#
+# Install python
+#
+log "Installing python"
+$DIR/install/python.sh
+
+#
+# Install homebrew
+#
+log "Installing homebrew files"
+$DIR/install/homebrew.sh
 
 #
 # We made it!
