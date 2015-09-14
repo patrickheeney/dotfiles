@@ -35,13 +35,13 @@ log "Fixing permissions"
 chmod -R +x backup/
 
 #
-# backup ssh
+# Backup ssh
 #
 log "Backing up SSH..."
 $DIR/backup/ssh.sh
 
 #
-# backup ssh
+# Backup ssh
 #
 log "Backing up accounting..."
 $DIR/backup/accounting.sh

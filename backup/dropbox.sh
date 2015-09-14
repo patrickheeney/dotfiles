@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-SRC=~/Accounting/
-DEST=/Volumes/Cabinet/Accounting
+read -p "What is the name of the dropbox folder: Dropbox (xxx)? " FOLDER
+
+SRC=~/"Dropbox ($FOLDER)"/
+DEST=/Volumes/Backup/"$FOLDER"
 
 echo "Source: $SRC"
 echo "Destination: $DEST"
@@ -23,7 +25,5 @@ rsync \
     --compress \
     --exclude __MACOSX \
     --exclude .DS_Store \
+    --exclude '.dropbox.cache' \
     "$SRC" "$DEST"
-
-# Other options
-    #--delete \
