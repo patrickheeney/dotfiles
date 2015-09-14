@@ -13,11 +13,12 @@ sudo -v
 brew update
 
 # Upgrade any already-installed formulae
-brew upgrade
+brew upgrade --all
 
 # Some taps
 brew tap homebrew/dupes
 brew tap homebrew/versions
+#brew tap caskroom/fonts
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -42,16 +43,13 @@ brew install gnu-sed --default-names
 brew install wget --enable-iri
 
 # Install more recent versions of some OS X tools
-brew install vim --override-system-vi
+#brew install vim --override-system-vi
 brew install grep
 brew install screen
 
 # Install PHP
-#brew tap homebrew/homebrew-php
-#brew install php55
 brew install php56
 brew install mcrypt
-#brew install php55-mcrypt
 brew install php56-mcrypt
 brew install composer
 
@@ -92,15 +90,8 @@ npm install -g bower
 mkdir ~/.nvm
 cp $(brew --prefix nvm)/nvm-exec ~/.nvm/
 
-#
-# Start stuff
-#
-
-# start php56 at login
-#ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
-
-# load php56 now
-#launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+# Install mackup
+brew install mackup
 
 # 
 # Install native apps
@@ -118,39 +109,55 @@ brew cask install alfred
 brew cask install appcleaner
 brew cask install arq
 brew cask install beyond-compare
+brew cask install cakebrew
 brew cask install calibre
 brew cask install cleanmymac
 brew cask install colloquy
+brew cask install dash
 brew cask install disk-drill
 brew cask install dropbox
 brew cask install evernote
 brew cask install firefox
 brew cask install flowdock
-brew cask install flux
+#brew cask install flux
+#brew cask install font-source-code-pro
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install google-drive
 brew cask install google-hangouts
+brew cask install harvest
 brew cask install iterm2
 brew cask install keka
+brew cask install lingon-x
 brew cask install mailplane
 brew cask install moom
+#brew cask install namebench
 brew cask install omnidisksweeper
 brew cask install onepassword
 brew cask install scansnap-manager
 brew cask install sequel-pro
-brew cask install silverlight
+brew cask install sketch
 brew cask install skype
+brew cask install slack
 brew cask install sourcetree
 brew cask install spotify
-brew cask install sublime-text
+brew cask install sublime-text3
 brew cask install teamviewer
-brew cask install toggldesktop
 brew cask install transmit
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
 COMMENT1
+
+#
+# Start stuff
+#
+
+# start php56 at login
+#ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+
+# load php56 now
+#launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 
 # Remove outdated versions from the cellar
 brew cleanup --force
