@@ -1,13 +1,11 @@
 # Dotfiles
 
-# Install
-Clone the repo as `Dotfiles` in to `$HOME`
+## Install
 
 ```
 cd $HOME
-git clone git@github.com:patrickheeney/dotfiles.git Dotfiles
-
-cd Dotfiles
-./install-dotfiles.sh
-./install-homebrew.sh
+git clone git@github.com:patrickheeney/dotfiles.git dotfiles
+cd dotfiles
+chmod +x install.sh
+./install.sh
 ```

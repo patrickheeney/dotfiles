@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-DEST=~/"Dropbox (Personal)"/Private/SSH/
-FILENAME=ssh_$(date +"%Y%m%d_%H%M%S").tar.gz
+SRC=~/Accounting/
+DEST=/Volumes/Cabinet/Accounting
 
 echo "Source: $SRC"
 echo "Destination: $DEST"
@@ -16,11 +16,13 @@ if [ ! -d "$DEST" ]; then
     exit 1
 fi
 
-# Create 
-tar -cvzf $FILENAME \
+# Rsync the $SRC to $DEST
+rsync \
+    --archive \
+    --verbose \
+    --compress \
     --exclude __MACOSX \
     --exclude .DS_Store \
-    -C ~/.ssh/ .
+    $SRC $DEST
 
-# Move to destination folder
-mv "$FILENAME" "$DEST"
+    #--delete \

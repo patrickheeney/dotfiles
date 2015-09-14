@@ -37,8 +37,14 @@ chmod -R +x backup/
 #
 # backup ssh
 #
-log "Backup SSH"
+log "Backing up SSH..."
 $DIR/backup/ssh.sh
+
+#
+# backup ssh
+#
+log "Backing up accounting..."
+$DIR/backup/accounting.sh
 
 #
 # We made it!
