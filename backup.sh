@@ -2,11 +2,9 @@
 
 #
 # Backup Script
-# 
-# Usage: 
-# 
-# git clone git@github.com:patrickheeney/dotfiles.git ~/dotfiles
-# cd ~/dotfiles
+#
+# Usage:
+#
 # chmod +x backup.sh
 # ./backup.sh
 #
@@ -17,38 +15,26 @@ set -e
 # Current dir
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Print a message to the console.
-log() { printf "$*\n" ; return $? ; }
-
-# Print an error message to the console and bail out of the script.
-fail() { log "\nERROR: $*\n" ; exit 1 ; }
-
 #
 # Start
 #
-log "Starting backup..."
-
-#
-# Fix permissions
-#
-log "Fixing permissions"
-chmod -R +x backup/
+echo "Starting backup..."
 
 #
 # Backup ssh
 #
-log "Backing up SSH..."
+echo "Backing up SSH..."
 $DIR/backup/ssh.sh
 
 #
 # Backup ssh
 #
-log "Backing up accounting..."
+echo "Backing up accounting..."
 $DIR/backup/accounting.sh
 
 #
 # We made it!
 #
-log ""
-log ""
-log "Done!"
+echo ""
+echo ""
+echo "Done!"

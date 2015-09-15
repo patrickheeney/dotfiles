@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
 
-# 
+#
 # Install tools using Homebrew
-# 
-# Usage: ./install-python.sh
-# 
+#
+# Usage: ./install/brew-python.sh
+#
 
 # Ask for the administrator password upfront.
-sudo -v
+#sudo -v
 
-# Install pip
-sudo easy_install pip
+# Install system python
+brew install python
+
+# Update system pip and setuptools
+pip install --upgrade pip setuptools
+
+# Install pyenv
+brew install pyenv pyenv-virtualenv
+
+# Install some python versions
+pyenv install 2.7
+
+# Set the global version
+pyenv global 2.7
 
 # # Install virtualenv
 # sudo pip install virtualenv
@@ -18,18 +30,12 @@ sudo easy_install pip
 # mkdir "$HOME/.virtualenvs"
 # sudo pip install autoenv
 
-# # Create ansible environment
-# mkvirtualenv ansible19
-# pip install --upgrade --force-reinstall -r python/requirements-ansible19.txt
-# deactivate
-
-# mkvirtualenv ansible2
-# pip install --upgrade --force-reinstall -r python/requirements-ansible2.txt
-# deactivate
-
 # mkvirtualenv ansiblesource
 # pip install paramiko PyYAML Jinja2 httplib2 six
 # git clone git://github.com/ansible/ansible.git --recursive $VIRTUAL_ENV/ansible
 # source $VIRTUAL_ENV/ansible/hacking/env-setup
 # pip install --upgrade --force-reinstall -r python/requirements-ansible-source.txt
 # deactivate
+
+# Uninstall
+# sudo pip freeze | xargs sudo pip uninstall -y
