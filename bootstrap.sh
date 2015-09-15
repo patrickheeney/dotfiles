@@ -5,7 +5,8 @@
 #
 # Usage:
 #
-# curl -s [url] | bash
+# chmod +x bootstrap.sh
+# ./bootstrap.sh
 #
 
 set -e

@@ -3,9 +3,5 @@
 ## Install
 
 ```
-cd $HOME
-git clone git@github.com:patrickheeney/dotfiles.git dotfiles
-cd dotfiles
-chmod +x install.sh
-./install.sh
+curl -s https://raw.githubusercontent.com/patrickheeney/dotfiles/master/bootstrap.sh | bash
 ```
