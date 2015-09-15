@@ -36,9 +36,9 @@ brew cask install google-hangouts
 brew cask install harvest
 brew cask install iterm2
 brew cask install keka
-brew cask install lingon-x
+brew cask install launchcontrol
 brew cask install mailplane
-brew cask install moom
+#brew cask install moom
 #brew cask install namebench
 brew cask install omnidisksweeper
 brew cask install onepassword
