@@ -6,11 +6,21 @@
 # Usage: ./install/brew-php.sh
 #
 
-# Install PHP
+# Add some taps
+brew tap josegonzalez/homebrew-php
+
+# Install
+# https://github.com/wilmoore/php-version#alternatives
+brew install php-version
+
+# Install php software
 brew install php56
 brew install mcrypt
 brew install php56-mcrypt
 brew install composer
+
+# Pick versions
+#php-version 5
 
 #
 # Start stuff

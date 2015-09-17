@@ -18,7 +18,6 @@ brew upgrade --all
 # Some taps
 brew tap homebrew/dupes
 brew tap homebrew/versions
-#brew tap caskroom/fonts
 
 # Run installers
 ./brew-system.sh
@@ -26,6 +25,8 @@ brew tap homebrew/versions
 ./brew-php.sh
 ./brew-node.sh
 ./brew-python.sh
+#./brew-go.sh
+#./brew-ruby.sh
 
 # Remove outdated versions from the cellar
 brew cleanup --force

@@ -17,22 +17,47 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-	source "$(brew --prefix)/etc/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
-fi;
+#if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+# source "$(brew --prefix)/etc/bash_completion";
+#elif [ -f /etc/bash_completion ]; then
+# source /etc/bash_completion;
+#fi;
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 #[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Add node / nvm
+# Check for brew
 if which brew > /dev/null; then
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
+
+  # Add tab completion for many Bash commands
+  if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    source "$(brew --prefix)/etc/bash_completion";
+  fi;
+
+  # Add node
+  if [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh;
+  fi;
+
+  # Add php
+  if [ -f "$(brew --prefix php-version)/php-version.sh" ]; then
+    source $(brew --prefix php-version)/php-version.sh;
+  fi;
+
 fi;
 
-# Add pyenv
+# Add python
 if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)";
 fi;
+
+# Add go
+if [[-s "$HOME/.gvm/scripts/gvm"]]; then
+  source "$HOME/.gvm/scripts/gvm";
+fi
+
+# Add ruby
+if [[-s "$HOME/.rvm/scripts/rvm"]]; then
+  source "$HOME/.rvm/scripts/rvm";
+fi
