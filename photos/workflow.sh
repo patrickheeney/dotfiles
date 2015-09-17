@@ -40,8 +40,8 @@ if has_program "exiftool"; then
         #     -csv \
         #     ~/Dropbox/'Photos from iPhoto'/* |
         #     egrep -v '.*,([^,]*),\1'
-        #     
-        
+        #
+
         # filename="${fullfile##*/}"
         # extension="${filename##*.}"
         # filename="${filename%.*}"
@@ -54,10 +54,30 @@ if has_program "exiftool"; then
         #     -d '%Y-%m-%d %H-%M-%S' \
         #     -S -s "$location"`)
 
-        # thedate="${dates[0]} ${dates[1]}" 
+        # thedate="${dates[0]} ${dates[1]}"
 
         # filename2=$thedate
         # path2="$EXPORTDIR/${thedate:0:4}/${thedate:0:7}"
+
+
+        # set -ex
+        # sudo chown -R $USER ${1:-.}
+        # find $1 -type f \( -iname "*.jpg" -o -iname "*.png" \) -not -path '*/\.*' -not -path './uploadme/*' | while read -r media
+        # do
+        #   read -r date time < <(exiv2 -g Exif.Image.DateTime -Pv "$media" ) || :
+        #   if test "$date"
+        #   then
+        #     IFS=: read -r year month day <<< "$date"
+        #     dir=uploadme/$year-$month-$day
+        #   else
+        #     dir=uploadme/$(stat -c %y "$media" | awk '{print $1}')
+        #     #echo \# $media NO EXIF... last modification date: $dir
+        #   fi
+        #     mkdir "$dir" || true
+        #     mv -v "$media" "$dir/$(basename $media)"
+        # done
+
+        # find -type d -not -path '*/\.*' -empty -delete
 
 
         # if [ ! -d "$path2" ];
@@ -65,7 +85,7 @@ if has_program "exiftool"; then
         #     mkdir -p "$path2"
         # fi
 
-        # if [ ! -f "$path2/$filename2.$extension" ] ; 
+        # if [ ! -f "$path2/$filename2.$extension" ] ;
         # then
         #     newfile="$path2/$filename2.$extension"
         # else
