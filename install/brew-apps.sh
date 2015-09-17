@@ -8,9 +8,11 @@
 
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew tap caskroom/fonts
 
 brew install brew-cask
 
+# apps
 brew cask install adobe-creative-cloud
 brew cask install adobe-reader
 brew cask install alfred
@@ -28,7 +30,6 @@ brew cask install evernote
 brew cask install firefox
 brew cask install flowdock
 #brew cask install flux
-#brew cask install font-source-code-pro
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install google-drive
@@ -55,3 +56,7 @@ brew cask install transmit
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
+
+# fonts
+brew cask install font-source-code-pro
+brew cask install font-hack
