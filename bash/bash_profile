@@ -53,11 +53,11 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi;
 
 # Add go
-if [[-s "$HOME/.gvm/scripts/gvm"]]; then
+if [[ -s "$HOME/.gvm/scripts/gvm" ]]; then
   source "$HOME/.gvm/scripts/gvm";
 fi
 
 # Add ruby
-if [[-s "$HOME/.rvm/scripts/rvm"]]; then
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm";
 fi

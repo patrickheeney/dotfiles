@@ -20,7 +20,7 @@ brew install php56-mcrypt
 brew install composer
 
 # Pick versions
-#php-version 5
+php-version 5
 
 #
 # Start stuff

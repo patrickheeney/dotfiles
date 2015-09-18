@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO:
+# Improve boostrap: https://github.com/necolas/dotfiles/blob/master/bin/dotfiles
+
 #
 # Boostrap Script
 #
@@ -41,6 +44,7 @@ if [ ! $(xcode-select -p) ]; then
   xcode select --install
 else
   log "Xcode already installed"
+  sudo xcodebuild -license
 fi
 
 #

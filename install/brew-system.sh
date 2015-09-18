@@ -32,6 +32,7 @@ brew install wget --enable-iri
 #brew install vim --override-system-vi
 brew install grep
 brew install screen
+brew install rsync
 
 # Install other useful binaries
 brew install ack

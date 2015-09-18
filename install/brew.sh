@@ -25,8 +25,8 @@ brew tap homebrew/versions
 ./brew-php.sh
 ./brew-node.sh
 ./brew-python.sh
-#./brew-go.sh
-#./brew-ruby.sh
+./brew-go.sh
+./brew-ruby.sh
 
 # Remove outdated versions from the cellar
 brew cleanup --force
