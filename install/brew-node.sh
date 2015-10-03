@@ -2,6 +2,7 @@
 
 #
 # Install tools using Homebrew
+# https://gist.github.com/DanHerbert/9520689
 #
 # Usage: ./install/brew-node.sh
 #

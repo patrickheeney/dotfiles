@@ -21,6 +21,7 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Fixing permissions..."
 chmod -R +x install/
 chmod -R +x backup/
+chmod -R +x bin/
 
 #
 # Run installers

@@ -13,6 +13,9 @@ brew tap josegonzalez/homebrew-php
 # https://github.com/wilmoore/php-version#alternatives
 brew install php-version
 
+# Install php dependencies
+brew install libxml2
+
 # Install php software
 brew install php56
 brew install mcrypt
