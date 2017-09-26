@@ -34,15 +34,15 @@ if which brew > /dev/null; then
     source "$(brew --prefix)/etc/bash_completion";
   fi;
 
-  # Add node
+  # Add nvm
   if [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
-    export NVM_DIR=~/.nvm
-    source $(brew --prefix nvm)/nvm.sh;
+    export NVM_DIR="$HOME/.nvm"
+    source "$(brew --prefix nvm)/nvm.sh";
   fi;
 
   # Add php
   if [ -f "$(brew --prefix php-version)/php-version.sh" ]; then
-    source $(brew --prefix php-version)/php-version.sh;
+    source "$(brew --prefix php-version)/php-version.sh";
   fi;
 
 fi;

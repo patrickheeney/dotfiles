@@ -56,3 +56,4 @@ echo "Installing launchd from $LAUNCHDIR"
 
 # User
 installuser "com.patrickheeney.backup.accounting.plist"
+installuser "com.patrickheeney.backup.snapshot.plist"

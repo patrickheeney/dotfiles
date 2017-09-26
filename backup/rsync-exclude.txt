@@ -32,6 +32,9 @@ Thumbs.db
 
 # more mac exclusions
 Icon?
+._.DS_Store
+._Thumbs.db
+._.TemporaryItems
 
 # dropbox
 .dropbox.cache*
@@ -39,3 +42,13 @@ Icon?
 # programming
 .composer*
 .sucuriquarantine*
+
+# synology
+_Syno_TaskConfig
+synobkpinfo.db
+._synobkpinfo.db
+.DestID
+._.DestID
+.apdisk
+._.apdisk
+@app
