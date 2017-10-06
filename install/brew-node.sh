@@ -10,6 +10,10 @@
 # Install nvm
 brew install nvm
 
+# NVM install
+mkdir ~/.nvm
+cp $(brew --prefix nvm)/nvm-exec ~/.nvm/
+
 # Install node stable
 nvm install stable
 
@@ -19,11 +23,5 @@ nvm alias default stable
 # Install npm
 npm install -g npm@latest
 
-# Install npm tools
-#npm install -g grunt-cli
-npm install -g gulp
-npm install -g bower
-
-# NVM install
-mkdir ~/.nvm
-cp $(brew --prefix nvm)/nvm-exec ~/.nvm/
+# Install yarn
+brew install yarn

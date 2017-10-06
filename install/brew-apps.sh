@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-source ../config.sh
-
 #
 # Install tools using Homebrew
 #
 # Usage: ./install/brew-apps.sh
 #
+
+source ../config.sh
 
 # App store manager
 brew install mas

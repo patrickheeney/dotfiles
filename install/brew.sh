@@ -22,12 +22,13 @@ brew tap homebrew/versions
 # Run installers
 ./brew-system.sh
 ./brew-apps.sh
-./brew-php.sh
 ./brew-node.sh
+./brew-php.sh
 ./brew-python.sh
 ./brew-go.sh
 ./brew-ruby.sh
 ./brew-mysql.sh
+./brew-docker.sh
 
 # Remove outdated versions from the cellar
 brew cleanup --force
