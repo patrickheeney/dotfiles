@@ -72,17 +72,16 @@ fi
 #
 # Clone the repo
 #
-if [ ! -d "$HOME/dotfiles" ]; then
+if [[ ! -d "$HOME/dotfiles" ]]; then
   #git clone git@github.com:patrickheeney/dotfiles.git $HOME/dotfiles
-  git clone https://github.com/patrickheeney/dotfiles.git $HOME/dotfiles
+  git clone https://github.com/patrickheeney/dotfiles.git "$HOME/dotfiles"
 fi
-
-cd $HOME/dotfiles
 
 #
 # Fix permissions
 #
 echo "Fixing permissions..."
+cd "$HOME/dotfiles"
 chmod +x install.sh
 chmod +x backup.sh
 chmod -R +x install/
