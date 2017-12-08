@@ -20,23 +20,27 @@ echo "Symlinking dotfiles from $DIR"
 
 # Symlink bash files
 find "$DIR/../bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+  #newdir=$( dirname "$location" )/bash
   newfile=$( basename "$location" )
-  #echo "$DIR/$newfile" "$HOME/.$newfile"
-  link "$DIR/$newfile" "$HOME/.$newfile"
+  echo "$location"
+  echo "$DIR/$newfile" "$HOME/.$newfile"
+  #link "$DIR/$newfile" "$HOME/.$newfile"
 done
 
 # Symlink git files
 find "$DIR/../git" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
-  #echo "$DIR/$newfile" "$HOME/.$newfile"
-  link "$DIR/$newfile" "$HOME/.$newfile"
+  echo "$location"
+  echo "$DIR/$newfile" "$HOME/.$newfile"
+  #link "$DIR/$newfile" "$HOME/.$newfile"
 done
 
 # Symlink app files
 find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
-  #echo "$DIR/$newfile" "$HOME/.$newfile"
-  link "$DIR/$newfile" "$HOME/.$newfile"
+  echo "$location"
+  echo "$DIR/$newfile" "$HOME/.$newfile"
+  #link "$DIR/$newfile" "$HOME/.$newfile"
 done
 
 # Reset settings
