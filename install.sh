@@ -16,14 +16,6 @@ set -e
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #
-# Fix permissions
-#
-echo "Fixing permissions..."
-chmod -R +x install/
-chmod -R +x backup/
-chmod -R +x bin/
-
-#
 # Run installers
 #
 echo "Installing osx..."

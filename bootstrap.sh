@@ -67,12 +67,24 @@ if ! has_program "git"; then
 fi
 
 #
-# Clone the repo and run installer
+# Clone the repo
 #
 git clone git@github.com:patrickheeney/dotfiles.git $HOME/dotfiles
 cd $HOME/dotfiles
+
+#
+# Fix permissions
+#
+echo "Fixing permissions..."
 chmod +x install.sh
 chmod +x backup.sh
+chmod -R +x install/
+chmod -R +x backup/
+chmod -R +x bin/
+
+#
+# Run the installer
+#
 #bash install.sh
 
 #
