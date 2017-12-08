@@ -19,21 +19,21 @@ link() {
 echo "Symlinking dotfiles from $DIR"
 
 # Symlink bash files
-find "$DIR/bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+find "$DIR/../bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   file="${location##*/}"
   file=".${file}"
   link "$DIR/$location" "$HOME/$file"
 done
 
 # Symlink git files
-find "$DIR/git" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+find "$DIR/../git" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   file="${location##*/}"
   file=".${file}"
   link "$DIR/$location" "$HOME/$file"
 done
 
 # Symlink app files
-find "$DIR/apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   file="${location##*/}"
   file=".${file}"
   link "$DIR/$location" "$HOME/$file"

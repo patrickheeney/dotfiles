@@ -15,15 +15,17 @@ brew install php-version
 
 # Install php dependencies
 brew install libxml2
+brew install mcrypt
 
 # Install php software
-brew install php56
-brew install mcrypt
-brew install php56-mcrypt
-brew install composer
+#brew install php56
+#brew install php56-mcrypt
+#brew install composer
+brew install php71
+brew install php71-mcrypt
 
 # Pick versions
-php-version 5
+php-version 7
 
 #
 # Start stuff

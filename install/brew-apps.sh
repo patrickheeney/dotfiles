@@ -14,19 +14,19 @@ brew install mas
 # app store apps
 mas signin --dialog "$MAINEMAIL"
 
-#mas install 405399194 #Kindle (1.12.4)
-mas install 425424353 #The Unarchiver (3.11.1)
-#mas install 497799835 #Xcode (8.2.1)
-#mas install 408981381 #iPhoto (9.6.1)
-mas install 406056744 #Evernote (6.10)
-mas install 515318186 #123DMake (1.6.0)
-mas install 566042322 #123D Design (2.2.1)
-mas install 443987910 #1Password (6.5.3)
-mas install 463362050 #PhotoSweeper (2.2.6)
-#mas install 803453959 #Slack (2.3.4)
-mas install 1000397973 #Wallcat (1.2.0)
-#mas install 404167149 #IP Scanner (3.52)
-mas install 403388562 #Transmit (4.4.11)
+#mas install 405399194 #Kindle
+mas install 425424353 #The Unarchiver
+#mas install 497799835 #Xcode
+#mas install 408981381 #iPhoto
+mas install 406056744 #Evernote
+mas install 515318186 #123DMake
+mas install 566042322 #123D Design
+mas install 443987910 #1Password
+mas install 463362050 #PhotoSweeper
+#mas install 803453959 #Slack
+mas install 1000397973 #Wallcat
+#mas install 404167149 #IP Scanner
+mas install 403388562 #Transmit
 
 # cask
 
@@ -38,7 +38,7 @@ brew install brew-cask
 
 # apps
 #brew cask install adobe-creative-cloud
-brew cask install adobe-reader
+#brew cask install adobe-reader
 #brew cask install alfred
 #brew cask install appcleaner
 brew cask install arq
@@ -55,11 +55,13 @@ brew cask install firefox
 #brew cask install flowdock
 #brew cask install flux
 brew cask install google-chrome
-brew cask install google-chrome-canary
+#brew cask install google-chrome-canary
 brew cask install google-drive
 #brew cask install google-hangouts
 #brew cask install harvest
+brew cask install insomnia
 brew cask install iterm2
+brew cask install kap
 brew cask install keka
 brew cask install launchcontrol
 #brew cask install mailplane
@@ -68,6 +70,7 @@ brew cask install mailspring
 #brew cask install namebench
 brew cask install omnidisksweeper
 #brew cask install onepassword
+brew cask install quickbooks2015
 brew cask install scansnap-manager
 brew cask install sequel-pro
 brew cask install sketch
