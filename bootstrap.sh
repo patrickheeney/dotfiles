@@ -72,7 +72,7 @@ fi
 #
 # Clone the repo
 #
-if [ ! test -d "$HOME/dotfiles" ]; then
+if [ ! -d "$HOME/dotfiles" ]; then
   #git clone git@github.com:patrickheeney/dotfiles.git $HOME/dotfiles
   git clone https://github.com/patrickheeney/dotfiles.git $HOME/dotfiles
 fi
