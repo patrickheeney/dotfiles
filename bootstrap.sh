@@ -39,13 +39,16 @@ log "Starting bootstrap..."
 #
 # Install developer tools
 #
+
 if [ ! $(xcode-select -p) ]; then
-  log "Installing xcode tools..."
-  xcode select --install
-else
-  log "Xcode already installed"
-  sudo xcodebuild -license
+  fail "Xcode installation required"
 fi
+
+log "Installing xcode tools..."
+xcode-select --install
+
+log "Running xcode license..."
+sudo xcodebuild -license
 
 #
 # Check if Homebrew is installed
