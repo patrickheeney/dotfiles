@@ -21,11 +21,11 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Installing osx..."
 $DIR/install/osx.sh
 
+echo "Installing homebrew files"
+$DIR/install/brew.sh
+
 echo "Installing dotfiles..."
 $DIR/install/dotfiles.sh
 
 echo "Installing launchd..."
 $DIR/install/launchd.sh
-
-echo "Installing homebrew files"
-$DIR/install/brew.sh

@@ -13,7 +13,7 @@ sudo -v
 brew update
 
 # Upgrade any already-installed formulae
-brew upgrade --all
+brew upgrade
 
 # Some taps
 brew tap homebrew/dupes
