@@ -54,6 +54,9 @@ removeuser() {
 
 echo "Installing launchd from $LAUNCHDIR"
 
+# Setup
+mkdir -p ~/Library/LaunchAgents/
+
 # User
 installuser "com.patrickheeney.backup.accounting.plist"
 installuser "com.patrickheeney.backup.snapshot.plist"
