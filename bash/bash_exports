@@ -22,7 +22,7 @@ export LC_ALL="en_US.UTF-8";
 export EDITOR="subl";
 
 # Change homebrew cask installation folders
-export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Change default terminal prompt to folder $
 export PS1="\W \$"

@@ -8,3 +8,10 @@ cp config.template.sh config.sh
 chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
+
+## After
+
+```
+mackup restore
+#copy ~/.ss
+```
