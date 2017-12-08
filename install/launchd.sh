@@ -5,7 +5,7 @@
 
 # Current dir
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-LAUNCHDIR="$DIR/../launchd"
+LAUNCHDIR="$( dirname "$DIR" )/launchd"
 
 installsystem() {
   from="$LAUNCHDIR/$1"
