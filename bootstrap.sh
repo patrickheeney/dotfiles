@@ -41,7 +41,7 @@ log "Starting bootstrap..."
 #
 if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
   log "Running xcode license..."
-  sudo xcodebuild -license
+  sudo xcodebuild -license accept
 else
   log "Installing xcode tools..."
   xcode-select --install
