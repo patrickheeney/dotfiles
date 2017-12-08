@@ -73,7 +73,7 @@ git clone git@github.com:patrickheeney/dotfiles.git $HOME/dotfiles
 cd $HOME/dotfiles
 chmod +x install.sh
 chmod +x backup.sh
-bash install.sh
+#bash install.sh
 
 #
 # We made it!

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DEST=~/"Dropbox (Personal)"/Private/SSH/
+SRC=~/.ssh/
+DEST=~/Dropbox/Private/SSH/
 FILENAME=ssh_$(date +"%Y%m%d_%H%M%S").tar.gz
 
 echo "Source: $SRC"
@@ -16,11 +17,11 @@ if [ ! -d "$DEST" ]; then
     exit 1
 fi
 
-# Create 
+# Create
 tar -cvzf $FILENAME \
     --exclude __MACOSX \
     --exclude .DS_Store \
-    -C ~/.ssh/ .
+    -C "$SRC" .
 
 # Move to destination folder
 mv "$FILENAME" "$DEST"
