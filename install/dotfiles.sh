@@ -7,6 +7,7 @@
 
 # Current dir
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MAINDIR="$( dirname "$DIR" )"
 
 link() {
   from="$1"
@@ -22,24 +23,24 @@ echo "Symlinking dotfiles from $DIR"
 find "$DIR/../bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
   echo "$location"
-  echo "$DIR/bash/$newfile" "$HOME/.$newfile"
-  #link "$DIR/bash/$newfile" "$HOME/.$newfile"
+  echo "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
+  #link "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
 done
 
 # Symlink git files
 find "$DIR/../git" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
   echo "$location"
-  echo "$DIR/git/$newfile" "$HOME/.$newfile"
-  #link "$DIR/git/$newfile" "$HOME/.$newfile"
+  echo "$MAINDIR/git/$newfile" "$HOME/.$newfile"
+  #link "$MAINDIR/git/$newfile" "$HOME/.$newfile"
 done
 
 # Symlink app files
 find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
   echo "$location"
-  echo "$DIR/apps/$newfile" "$HOME/.$newfile"
-  #link "$DIR/apps/$newfile" "$HOME/.$newfile"
+  echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+  #link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
 done
 
 # Reset settings
