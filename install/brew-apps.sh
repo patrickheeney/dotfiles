@@ -18,7 +18,7 @@ mas signin --dialog "$MAINEMAIL"
 mas install 425424353 #The Unarchiver
 #mas install 497799835 #Xcode
 #mas install 408981381 #iPhoto
-mas install 406056744 #Evernote
+#mas install 406056744 #Evernote
 mas install 515318186 #123DMake
 mas install 566042322 #123D Design
 mas install 443987910 #1Password
@@ -27,6 +27,7 @@ mas install 463362050 #PhotoSweeper
 mas install 1000397973 #Wallcat
 #mas install 404167149 #IP Scanner
 mas install 403388562 #Transmit
+mas install 784801555 #Microsoft OneNote
 
 # cask
 
@@ -56,7 +57,7 @@ brew cask install firefox
 #brew cask install flux
 brew cask install google-chrome
 #brew cask install google-chrome-canary
-brew cask install google-drive
+brew cask install google-drive-file-stream
 #brew cask install google-hangouts
 #brew cask install harvest
 brew cask install insomnia
@@ -78,7 +79,7 @@ brew cask install skype
 #brew cask install slack
 brew cask install sourcetree
 brew cask install spotify
-brew cask install sublime-text3
+brew cask install sublime-text
 brew cask install teamviewer
 brew cask install transmit
 brew cask install vagrant
