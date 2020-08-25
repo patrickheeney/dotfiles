@@ -6,36 +6,17 @@
 # Usage: ./install/brew-python.sh
 #
 
-# Ask for the administrator password upfront.
-#sudo -v
+[ -z "$INCLUDE_VERSIONS_SOURCE" ] && source ../config.versions.sh
+[ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
-# Install system python
-brew install python
+brew_install_asdf_plugin_version python $ASDF_PYTHON_VERSION
+
+# Reload to detect new paths
+source "$HOME/.bash_profile"
 
 # Update system pip and setuptools
-pip install --upgrade pip setuptools
+python -m pip install -U pip setuptools wheel
 
-# Install pyenv
-brew install pyenv pyenv-virtualenv
-
-# Install some python versions
-pyenv install 2.7
-
-# Set the global version
-pyenv global 2.7
-
-# # Install virtualenv
-# sudo pip install virtualenv
-# sudo pip install virtualenvwrapper
-# mkdir "$HOME/.virtualenvs"
-# sudo pip install autoenv
-
-# mkvirtualenv ansiblesource
-# pip install paramiko PyYAML Jinja2 httplib2 six
-# git clone git://github.com/ansible/ansible.git --recursive $VIRTUAL_ENV/ansible
-# source $VIRTUAL_ENV/ansible/hacking/env-setup
-# pip install --upgrade --force-reinstall -r python/requirements-ansible-source.txt
-# deactivate
-
-# Uninstall
-# sudo pip freeze | xargs sudo pip uninstall -y
+# Install virtual env
+python -m pip install virtualenv
+asdf reshim python

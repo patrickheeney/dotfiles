@@ -26,3 +26,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Change default terminal prompt to folder $
 export PS1="\W \$"
+
+# Require virtual environment for python/pip
+# https://docs.python-guide.org/dev/pip-virtualenv/
+export PIP_REQUIRE_VIRTUALENV=true

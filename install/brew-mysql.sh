@@ -1,5 +1,47 @@
 #!/usr/bin/env bash
 
+# Install
+brew install mysql
+
+# brew services start mysql
+# brew services stop mysql
+
+# Warning - this method will remove all of your databases in the /usr/local/var/mysql folder
+
+# $ brew uninstall mysql --ignore-dependencies
+# Uninstalling /usr/local/Cellar/mysql/8.0.12... (255 files, 233.0MB)
+# Error: Permission denied @ dir_s_rmdir - /usr/local/Cellar/mysql/8.0.12
+
+# $ sudo rm -rf /usr/local/Cellar/mysql
+# $ brew cleanup
+# $ sudo rm -rf /usr/local/var/mysql
+# $ brew install mysql
+
+
+# sudo mysql -u root
+# #--UPDATE mysql.user SET password=PASSWORD('root') WHERE user='root';
+# ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+# flush privileges;
+
+#
+# Mariadb
+#
+
+# Doesn't support skip locked yet, mysql needed
+# brew install mariadb
+
+# brew services start mariadb
+# brew services stop mariadb
+
+# sudo mysql -u root
+# #--UPDATE mysql.user SET password=PASSWORD('root') WHERE user='root';
+# ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+# flush privileges;
+
+#
+# Old Way
+#
+
 #
 # Install tools using Homebrew
 # https://gist.github.com/benlinton/d24471729ed6c2ace731
@@ -12,12 +54,27 @@
 # Stop server:
 # $ mysql.server stop
 #
+# To connect run:
+#     mysql -uroot
+#
+# To have launchd start mysql now and restart at login:
+#   brew services start mysql
+# Or, if you don't want/need a background service you can just run:
+#   mysql.server start
+# To have launchd start mariadb now and restart at login:
+#   brew services start mariadb
+# Or, if you don't want/need a background service you can just run:
+#   mysql.server start
 
-# Install
-brew install mysql
-mysql.server restart
-mysql_secure_installation
-mysql.server stop
+# brew install mysql
+# mysql_secure_installation
+# mysql.server start
+# mysql.server restart
+# mysql.server stop
+
+# mysqld --skip-grant-tables &
+# Open new terminal
+# mysql_secure_installation
 
 # Start agent for current version of mysql (including on login)
 # ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents

@@ -10,6 +10,7 @@
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+brew install gpg
 
 # Install some other useful utilities like `sponge`
 brew install moreutils
@@ -26,7 +27,8 @@ brew install bash
 brew install bash-completion
 
 # Install wget with IRI support
-brew install wget --enable-iri
+#brew install wget --enable-iri
+brew install wget
 
 # Install more recent versions of some OS X tools
 #brew install vim --override-system-vi
@@ -45,6 +47,9 @@ brew install rename
 brew install tree
 brew install webkit2png
 brew install unrar
+
+# Version management
+brew install asdf
 
 # Mac backup
 brew install mackup

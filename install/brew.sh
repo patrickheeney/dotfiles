@@ -6,6 +6,9 @@
 # Usage: ./install/brew.sh
 #
 
+source ../config.versions.sh
+source brew-functions.sh
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -15,18 +18,22 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Some taps
-brew tap homebrew/dupes
-brew tap homebrew/versions
+# Some taps 0 depreciated
+#brew tap homebrew/dupes
+#brew tap homebrew/versions
 
-# Run installers
+# System and apps
 ./brew-system.sh
 ./brew-apps.sh
+
+# Programming
 ./brew-node.sh
 ./brew-php.sh
 ./brew-python.sh
 ./brew-go.sh
 ./brew-ruby.sh
+
+# Database programming software
 ./brew-mysql.sh
 ./brew-docker.sh
 
@@ -35,4 +42,4 @@ brew cleanup --force
 
 # Fix anything?
 brew doctor
-brew prune
+brew cleanup

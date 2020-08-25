@@ -41,9 +41,10 @@ brew install brew-cask
 #brew cask install adobe-creative-cloud
 #brew cask install adobe-reader
 #brew cask install alfred
-#brew cask install appcleaner
+brew cask install appcleaner
 brew cask install arq
 brew cask install beyond-compare
+brew cask install blender
 brew cask install cakebrew
 brew cask install calibre
 brew cask install cleanmymac
@@ -51,10 +52,11 @@ brew cask install cleanmymac
 #brew cask install dash
 #brew cask install disk-drill
 brew cask install dropbox
-brew cask install evernote
+#brew cask install evernote
 brew cask install firefox
 #brew cask install flowdock
 #brew cask install flux
+brew cask install fontbase
 brew cask install google-chrome
 #brew cask install google-chrome-canary
 brew cask install google-drive-file-stream

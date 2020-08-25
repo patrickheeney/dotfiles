@@ -14,4 +14,15 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 # Change php path
 #export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 # https://github.com/Homebrew/homebrew-php/issues/372
-export PATH="#{HOMEBREW_PREFIX}/bin:$PATH"
+# export PATH="#{HOMEBREW_PREFIX}/bin:$PATH"
+
+# nodejs - yarn
+if type yarn &>/dev/null; then
+  export PATH=$(yarn global bin):$PATH
+fi
+
+# Add python
+##echo 'export PYENV_ROOT=”$HOME/.pyenv”' >> ~/.bash_profile
+##echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"

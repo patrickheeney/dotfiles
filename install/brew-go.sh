@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 
 #
-# Install
-#
-# Don't use homebrew due to issues:
-# https://github.com/sdkman/sdkman-cli/issues/266
-# http://www.ascent.io/blog/2014/03/11/gvm-with-golang/
+# Install Go
 #
 # Usage: ./install/brew-go.sh
 #
 
-# dependencies
-brew install mercurial bzr
+[ -z "$INCLUDE_VERSIONS_SOURCE" ] && source ../config.versions.sh
+[ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
-# Install GVM
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-
-# Install versions
-#gvm install go1.2
-#gvm use go1.2 --default
+brew_install_asdf_plugin_version golang $ASDF_GO_VERSION
