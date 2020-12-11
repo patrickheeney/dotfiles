@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source ../config.sh
+source rsync.sh
+
+SRC="$DRIVE_SOURCE_ASSET_VOLUME$DRIVE_SOURCE_ASSET_ASSETS/"
+DEST="$DRIVE_SOURCE_REDASSET_VOLUME$DRIVE_SOURCE_REDASSET_ASSETS/"
+RSYNC_DELETE="false"
+RSYNC_LOG="true"
+RSYNC_DRY="false"
+RSYNC_EXCLUDE_MAC="true"
+
+run_rsync

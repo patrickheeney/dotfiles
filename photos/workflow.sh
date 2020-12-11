@@ -21,17 +21,17 @@ if [ ! -d "$SEARCHPATH" ]; then
     exit 1
 fi
 
-# check for rdupes and run
-if has_program "fdupes"; then
-    echo "Running rdupes..."
-    fdupes -rd $SEARCHPATH
-    #yes 2 | fdupes -rd $SEARCHPATH
-fi
+# check for fdupes and run
+# if has_program "fdupes"; then
+#     echo "Running fdupes..."
+#     fdupes -rd $SEARCHPATH
+#     #yes 2 | fdupes -rd $SEARCHPATH
+# fi
 
 # run exiftool for each file in the folder
 if has_program "exiftool"; then
     echo "Running exiftool..."
-    find $SEARCHPATH -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+    find $SEARCHPATH -type f -name '*' -print0 -maxdepth 1 | while IFS= read -r -d '' location; do
         #filename="${location##*/}"
         exiftool '-FileName<CreateDate' -d '%Y-%m-%d %H.%M.%S%%-c.%%le' "$location"
 

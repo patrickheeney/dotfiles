@@ -38,6 +38,7 @@ brew install rsync
 
 # Install other useful binaries
 brew install ack
+brew install fdupes
 brew install exiftools
 brew install git
 brew install p7zip

@@ -59,6 +59,11 @@ run_rsync () {
   # Rsync the $SRC to $DEST
   echo "rsync $OPTS $SRC $DEST"
 
+  if [ ! -d "$DEST" ]; then
+    echo "DIR $DEST DOES NOT EXIST"
+    exit 9999
+  fi
+
   if [[ $RSYNC_LOG == "true" ]]; then
     rsync $OPTS "$SRC" "$DEST" | tee "$DIR/rsync.log.`date +%Y%m%d-%H%M`"
   else

@@ -9,6 +9,9 @@
 	cm = commit
 	ch = checkout
 	st = status --short
+	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+	no-whitespace = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+
 
 [core]
 	excludesfile = ~/.gitignore
@@ -24,3 +27,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
+[commit]
+	template = ~/.stCommitMsg
+
+[color]
+	ui = auto
