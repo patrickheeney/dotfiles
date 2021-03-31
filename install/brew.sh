@@ -33,9 +33,10 @@ brew upgrade
 ./brew-go.sh
 ./brew-ruby.sh
 
-# Database programming software
+# Database
 ./brew-mysql.sh
 ./brew-docker.sh
+./brew-redis.sh
 
 # Remove outdated versions from the cellar
 brew cleanup --force
