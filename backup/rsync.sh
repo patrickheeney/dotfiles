@@ -18,8 +18,10 @@ run_rsync () {
   # delete files on remote during rsync and also delete excluded
 
   if [[ $RSYNC_DELETE == "true" ]]; then
-    # --delete-during
-    OPTS="$OPTS --delete --delete-excluded --delete-delay"
+    # --delete-before: Delete files in the destination directory before copying file-with-same-name from source directory
+    # --delete-during: Delete files in the destination directory WHILE copying file-with-same-name from source directory
+    # --delete-delay: Mark deletes during transfer, but wait until transfer is complete
+    OPTS="$OPTS --delete --delete-during --delete-excluded"
   fi
 
   # only process existing files

@@ -9,6 +9,9 @@
 [ -z "$INCLUDE_VERSIONS_SOURCE" ] && source ../config.versions.sh
 [ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
+# Install keys
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
 # Install nodejs LTS
 export NODEJS_CHECK_SIGNATURES=no
 brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
