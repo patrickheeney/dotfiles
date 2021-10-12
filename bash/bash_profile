@@ -32,8 +32,8 @@ if type brew &>/dev/null; then
     done
   fi
 
-  # Add asdf: $(brew --prefix asdf)
-  if [[ -r "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh"
+  HOMEBREW_ASDF_PREFIX="$(brew --prefix asdf)"
+  if [[ -r "${HOMEBREW_ASDF_PREFIX}/libexec/asdf.sh" ]]; then
+    source "${HOMEBREW_ASDF_PREFIX}/libexec/asdf.sh"
   fi
 fi

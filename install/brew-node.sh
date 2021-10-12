@@ -15,6 +15,7 @@ bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 # Install nodejs LTS
 export NODEJS_CHECK_SIGNATURES=no
 brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
+#brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION
 
 # Reload to detect new paths
 source "$HOME/.bash_profile"
@@ -27,6 +28,7 @@ source "$HOME/.bash_profile"
 
 # install latest yarn and npm
 npm install --silent -g yarn@latest npm@latest
+#npm install --silent -g npm@latest
 
 # Fix npm symlinks for updating
 # https://github.com/yasinuslu/dotfiles/blob/master/src/install_asdf.sh
