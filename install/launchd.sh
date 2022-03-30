@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Notes
+# https://www.launchd.info/
 # http://stackoverflow.com/questions/132955/how-do-i-set-a-task-to-run-every-so-often
 
 # Current dir
@@ -10,8 +11,9 @@ LAUNCHDIR="$( dirname "$DIR" )/launchd"
 installsystem() {
   from="$LAUNCHDIR/$1"
   to=/Library/LaunchDaemons/"$1"
-  echo "Copying '$from' to '$to'"
-  cp -f "$from" "$to"
+  echo "Linking '$from' to '$to'"
+  # cp -f "$from" "$to"
+  ln -s "$from" "$to"
   launchctl load -w "$to"
 }
 
@@ -25,8 +27,9 @@ removesystem() {
 installagent() {
   from="$LAUNCHDIR/$1"
   to=/Library/LaunchAgents/"$1"
-  echo "Copying '$from' to '$to'"
-  cp -f "$from" "$to"
+  echo "Linking '$from' to '$to'"
+  # cp -f "$from" "$to"
+  ln -s "$from" "$to"
   launchctl load -w "$to"
 }
 
@@ -40,8 +43,9 @@ removeagent() {
 installuser() {
   from="$LAUNCHDIR/$1"
   to=~/Library/LaunchAgents/"$1"
-  echo "Copying '$from' to '$to'"
-  cp -f "$from" "$to"
+  echo "Linking '$from' to '$to'"
+  # cp -f "$from" "$to"
+  ln -s "$from" "$to"
   launchctl load -w "$to"
 }
 
@@ -58,5 +62,8 @@ echo "Installing launchd from $LAUNCHDIR"
 mkdir -p ~/Library/LaunchAgents/
 
 # User
-installuser "com.patrickheeney.backup.accounting.plist"
-installuser "com.patrickheeney.backup.snapshot.plist"
+removeuser "com.patrickheeney.backupaccounting.plist"
+removeuser "com.patrickheeney.backupsnapshot.plist"
+
+installuser "com.patrickheeney.backupaccounting.plist"
+installuser "com.patrickheeney.backupsnapshot.plist"

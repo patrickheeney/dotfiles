@@ -15,14 +15,14 @@ ARGV.each do |f|
   root_dir = f
 
   Dir.glob "#{root_dir}/*" do |file|
-    match_video = /.*?\.(mp4|mov)$/.match file
+    match_video = /.*?\.(mp4|mov)$/i.match file
     if match_video
       folder = File.join(root_dir, "Videos")
       move_file(folder, file)
       next
     end
 
-    match_image = /.*?(\d\d\d\d)-(\d\d)-\d\d \d\d.\d\d.\d\d.*\.(jpg|heic)$/.match file
+    match_image = /.*?(\d\d\d\d)-(\d\d)-\d\d \d\d.\d\d.\d\d.*\.(jpg|heic|png|aae)$/i.match file
     if match_image
       year = match_image[1]
       month = match_image[2]
@@ -36,7 +36,7 @@ ARGV.each do |f|
       next
     end
 
-    match_imageremain = /.*?\.(jpg|heic)$/.match file
+    match_imageremain = /.*?\.(jpg|heic|png|aae)$/i.match file
     if match_imageremain
       folder = File.join(root_dir, "Unmatched")
       move_file(folder, file)

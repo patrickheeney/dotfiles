@@ -35,7 +35,7 @@ brew upgrade
 
 # Database
 ./brew-mysql.sh
-./brew-docker.sh
+#./brew-docker.sh
 ./brew-redis.sh
 
 # Remove outdated versions from the cellar
@@ -44,3 +44,4 @@ brew cleanup --force
 # Fix anything?
 brew doctor
 brew cleanup
+brew autoremove

@@ -47,7 +47,6 @@ brew install pv
 brew install rename
 brew install tree
 brew install webkit2png
-brew install unrar
 
 # Version management
 brew install asdf
