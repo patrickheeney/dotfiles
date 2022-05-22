@@ -12,6 +12,9 @@
 # Install keys
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
+# Install node dependencies
+brew install gpg
+
 # Install nodejs LTS
 export NODEJS_CHECK_SIGNATURES=no
 brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION

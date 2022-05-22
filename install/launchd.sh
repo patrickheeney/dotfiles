@@ -62,8 +62,5 @@ echo "Installing launchd from $LAUNCHDIR"
 mkdir -p ~/Library/LaunchAgents/
 
 # User
-removeuser "com.patrickheeney.backupaccounting.plist"
-removeuser "com.patrickheeney.backupsnapshot.plist"
-
-installuser "com.patrickheeney.backupaccounting.plist"
-installuser "com.patrickheeney.backupsnapshot.plist"
+removeuser "com.patrickheeney.backupimac.plist"
+installuser "com.patrickheeney.backupimac.plist"

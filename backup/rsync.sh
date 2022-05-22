@@ -1,4 +1,53 @@
 
+has_mount () {
+  CHECK1=${1%/}
+  CHECK2=${2%/}
+
+  if mount | grep "on $CHECK1 (" > /dev/null; then
+    echo
+  else
+    # echo "$CHECK1 MOUNT FAIL"
+    return 1
+  fi
+
+  if mount | grep "on $CHECK2 (" > /dev/null; then
+    echo
+  else
+    # echo "$CHECK2 MOUNT FAIL"
+    return 1
+  fi
+
+  return 0
+}
+
+check_mount () {
+  if [ -z ${SRC+x} ]; then
+    echo "SRC IS MISSING"
+    exit 1
+  fi
+
+  CHECKSRC=${SRC%/}
+  if mount | grep "on $CHECKSRC (" > /dev/null; then
+    echo "$SRC SRC MOUNT: PASS"
+  else
+    echo "$SRC SRC MOUNT: FAIL"
+    exit 1
+  fi
+
+  if [ -z ${DEST+x} ]; then
+    echo "DEST IS MISSING"
+    exit 1
+  fi
+
+  CHECKDST=${DEST%/}
+  if mount | grep "on $CHECKDST (" > /dev/null; then
+    echo "$DEST DST MOUNT: PASS"
+  else
+    echo "$DEST DST MOUNT: FAIL"
+    exit 1
+  fi
+}
+
 run_rsync () {
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
 

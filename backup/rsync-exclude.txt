@@ -1,5 +1,4 @@
 # Project files
-DB2
 
 # exclude mac and windows files
 # http://alanwsmith.com/rsync-exclude-list-for-mac-osx
