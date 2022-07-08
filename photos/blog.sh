@@ -31,26 +31,22 @@ else
     echo "exiftool required"
 fi
 
-if has_program "imagemagick"; then
+# imagemagick = convert
+if has_program "convert"; then
     echo "Resizing photos..."
 
     # mogrify -resize 50% *.png
     # magic -size 700 
-
     # convert '*.jpg[700x>]' thumb-700-%03d.jpg
-
-
     # find $SEARCHPATH -iname '*.jpg' -exec convert \{} -verbose -set filename:base "%[basename]" -resize 700\> "$SEARCHPATH/%[filename:base].jpg" \;
 
-    find $SEARCHPATH -type f \( -iname '*.jpg' ! -name '.DS_Store' \) -print0 -maxdepth 1 | while IFS= read -r -d '' location; do 
-
+    find $SEARCHPATH -type f \( -iname '*.jpg' ! -iname '*-new.jpg' ! -iname '*.jpg_original' ! -name '.DS_Store' \) -print0 -maxdepth 1 | while IFS= read -r -d '' location; do 
         echo $location
-
-        convert -verbose -set filename:base "%[basename]" -resize 700\> "$SEARCHPATH/%[filename:base].jpg"
-
+        convert "${location}" -verbose -set filename:base "%[basename]" -resize 700\> "${SEARCHPATH}/%[filename:base]-new.jpg"
     done
-
 
 else
     echo "imagemagick required"
 fi
+
+#@TODO - rename files to have current date with letters?

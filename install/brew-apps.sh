@@ -65,13 +65,14 @@ brew cask install google-drive-file-stream
 brew cask install insomnia
 brew cask install iterm2
 brew cask install kap
+brew cask install keepass
 brew cask install keka
 brew cask install launchcontrol
 #brew cask install mailplane
 brew cask install mailspring
 #brew cask install moom
 #brew cask install namebench
-brew cask install omnidisksweeper
+# brew cask install omnidisksweeper
 #brew cask install onepassword
 brew cask install quickbooks2015
 brew cask install scansnap-manager

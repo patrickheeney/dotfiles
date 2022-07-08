@@ -10,11 +10,20 @@
 [ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
 # Install php dependencies
-#brew install libxml2
-#brew install mcrypt
+# https://github.com/asdf-community/asdf-php#macos
+# https://github.com/asdf-community/asdf-php/blob/master/.github/workflows/workflow.yml#L52
+brew install autoconf automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip openssl@1.1 pkg-config re2c zlib
+# others I encountered
+brew install oniguruma
+# optional
+brew install gmp libsodium imagemagick
 
 # PHP_WITHOUT_PEAR=yes
+# https://github.com/asdf-community/asdf-php/issues/94
+PHP_WITHOUT_PDO_PGSQL=yes
 brew_install_asdf_plugin_version php $ASDF_PHP_VERSION
+
+# ---
 
 # Add some taps
 # brew tap josegonzalez/homebrew-php
