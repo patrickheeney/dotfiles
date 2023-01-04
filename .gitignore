@@ -1,3 +1,4 @@
 bash_extra
 rsync.log*
 config.sh
+.ssh

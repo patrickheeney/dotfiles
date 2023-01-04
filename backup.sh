@@ -33,6 +33,12 @@ echo "Backing up accounting..."
 $DIR/backup/accounting.sh
 
 #
+# Backup ssh
+#
+echo "Backing up imac..."
+$DIR/backup/imac.sh
+
+#
 # We made it!
 #
 echo ""
