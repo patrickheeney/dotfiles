@@ -9,20 +9,29 @@
 [ -z "$INCLUDE_VERSIONS_SOURCE" ] && source ../config.versions.sh
 [ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
-# Install php dependencies
-# https://github.com/asdf-community/asdf-php#macos
-# https://github.com/asdf-community/asdf-php/blob/master/.github/workflows/workflow.yml#L52
-brew install autoconf automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip openssl@1.1 pkg-config re2c zlib
-# others I encountered
-brew install oniguruma
-# optional
-brew install gmp libsodium imagemagick
+# ASDF is broken, use homebrew isntead
+# ---
 
-# PHP_WITHOUT_PEAR=yes
-# https://github.com/asdf-community/asdf-php/issues/94
-PHP_WITHOUT_PDO_PGSQL=yes
-brew_install_asdf_plugin_version php $ASDF_PHP_VERSION
+# # Install php dependencies
+# # https://github.com/asdf-community/asdf-php#macos
+# # https://github.com/asdf-community/asdf-php/blob/master/.github/workflows/workflow.yml#L52
+# brew install autoconf automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip openssl@1.1 pkg-config re2c zlib
+# # others I encountered
+# brew install oniguruma
+# # optional
+# brew install gmp libsodium imagemagick
 
+# # PHP_WITHOUT_PEAR=yes
+# # https://github.com/asdf-community/asdf-php/issues/94
+# PHP_WITHOUT_PDO_PGSQL=yes
+# brew_install_asdf_plugin_version php $ASDF_PHP_VERSION
+
+# Homebrew
+# ---
+
+brew install php
+
+# OLD
 # ---
 
 # Add some taps

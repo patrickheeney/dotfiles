@@ -1,0 +1,38 @@
+# Load the shell dotfiles, and then some:
+# * bash_paths can be used to extend `$PATH`.
+# * bash_extra can be used for other settings you don’t want to commit.
+for file in ~/.{zsh_paths,zsh_exports,zsh_prompt,zsh_aliases,zsh_functions,zsh_extra}; do
+ [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# Autocorrect typos in path names when using `cd`
+# shopt -s cdspell;
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+# for option in autocd globstar; do
+#   shopt -s "$option" 2> /dev/null;
+# done;
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+#[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Check for brew
+if type brew &>/dev/null; then
+  # HOMEBREW_PREFIX="$(brew --prefix)"
+
+  # Add bash completion
+  # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+  # FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+  # autoload -Uz compinit
+  # compinit
+
+  # Add asdf
+  # https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
+  HOMEBREW_ASDF_PREFIX="$(brew --prefix asdf)"
+  if [[ -r "${HOMEBREW_ASDF_PREFIX}/libexec/asdf.sh" ]]; then
+    source "${HOMEBREW_ASDF_PREFIX}/libexec/asdf.sh"
+  fi
+fi

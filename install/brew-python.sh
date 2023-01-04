@@ -12,7 +12,8 @@
 brew_install_asdf_plugin_version python $ASDF_PYTHON_VERSION
 
 # Reload to detect new paths
-source "$HOME/.bash_profile"
+# source "$HOME/.bash_profile"
+source "$HOME/.zsh_profile"
 
 # Update system pip and setuptools
 python -m pip install -U pip setuptools wheel

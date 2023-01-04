@@ -20,11 +20,19 @@ link() {
 echo "Symlinking dotfiles from $DIR"
 
 # Symlink bash files
-find "$DIR/../bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+# find "$DIR/../bash" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+#   newfile=$( basename "$location" )
+#   #echo "$location"
+#   #echo "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
+#   link "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
+# done
+
+# Symlink zsh files
+find "$DIR/../zsh" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
   newfile=$( basename "$location" )
   #echo "$location"
-  #echo "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
-  link "$MAINDIR/bash/$newfile" "$HOME/.$newfile"
+  #echo "$MAINDIR/zsh/$newfile" "$HOME/.$newfile"
+  link "$MAINDIR/zsh/$newfile" "$HOME/.$newfile"
 done
 
 # Symlink git files
@@ -37,11 +45,20 @@ done
 
 # Symlink app files
 find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
-  newfile=$( basename "$location" )
-  #echo "$location"
-  #echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
-  link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+ newfile=$( basename "$location" )
+ #echo "$location"
+ #echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+ link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+done
+
+# Symlink app dirs
+find "$DIR/../apps" -type d -maxdepth 1 -name '*' -print0 | while IFS= read -r -d '' location; do
+ newfile=$( basename "$location" )
+ #echo "$location"
+ #echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+ link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
 done
 
 # Reset settings
-source "$HOME/.bash_profile"
+# source "$HOME/.bash_profile"
+source "$HOME/.zsh_profile"

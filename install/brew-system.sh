@@ -9,22 +9,22 @@
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+# sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 brew install gpg
 
 # Install some other useful utilities like `sponge`
-brew install moreutils
+# brew install moreutils
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-brew install findutils
+brew install findutils 
 
 # Install GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --default-names
+# brew install gnu-sed --default-names
 
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash
-brew install bash-completion
+# brew install bash-completion
 
 # Install wget with IRI support
 #brew install wget --enable-iri
@@ -33,20 +33,23 @@ brew install wget
 # Install more recent versions of some OS X tools
 #brew install vim --override-system-vi
 brew install grep
-brew install screen
+# brew install screen
 brew install rsync
 
 # Install other useful binaries
 brew install ack
-brew install fdupes
-brew install exiftools
+# brew install fdupes
 brew install git
-brew install p7zip
-brew install pigz
+# brew install p7zip
+# brew install pigz
 brew install pv
 brew install rename
-brew install tree
-brew install webkit2png
+# brew install tree
+# brew install webkit2png
+
+# Photo management
+brew install exiftool
+brew install imagemagick
 
 # Version management
 brew install asdf

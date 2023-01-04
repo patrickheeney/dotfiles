@@ -12,6 +12,9 @@ source brew-functions.sh
 # Ask for the administrator password upfront.
 sudo -v
 
+# Turn off analytics
+brew analytics off
+
 # Make sure we're using the latest Homebrew
 brew update
 

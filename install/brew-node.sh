@@ -10,7 +10,7 @@
 [ -z "$INCLUDE_FUNCTIONS_SOURCE" ] && source functions.sh
 
 # Install keys
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+# bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
 # Install node dependencies
 brew install gpg
@@ -21,7 +21,8 @@ brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
 #brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION
 
 # Reload to detect new paths
-source "$HOME/.bash_profile"
+# source "$HOME/.bash_profile"
+source "$HOME/.zsh_profile"
 
 # bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 # if [ $(id -u) -eq "0" ]; then

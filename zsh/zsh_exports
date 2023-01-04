@@ -1,0 +1,35 @@
+# Larger bash history (allow 32³ entries; default is 500)
+#export HISTSIZE=32768;
+#export HISTFILESIZE=$HISTSIZE;
+#export HISTCONTROL=ignoredups;
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
+
+# Prefer US English and use UTF-8
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
+
+# Highlight section titles in manual pages
+#export LESS_TERMCAP_md="${yellow}";
+
+# Don’t clear the screen after quitting a manual page
+#export MANPAGER="less -X";
+
+# Always enable colored `grep` output
+#export GREP_OPTIONS="--color=auto";
+
+# Make sublime the default editor
+#export EDITOR="subl";
+
+# Change homebrew cask installation folders
+#export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Change default terminal prompt to folder $
+#export PS1="%n@%m %1~ %#" #user@machine path
+#export PS1="%1d$ \$" #folder name
+export PS1="%1~ \$" #folder name
+#export PS1="%~ \$" #path relative to home
+
+# Require virtual environment for python/pip
+# https://docs.python-guide.org/dev/pip-virtualenv/
+export PIP_REQUIRE_VIRTUALENV=true
