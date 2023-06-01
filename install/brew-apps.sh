@@ -80,6 +80,7 @@ brew install --cask spotify
 brew install --cask sublime-text
 brew install --cask tableplus
 brew install --cask teamviewer
+brew install --cask thunderbird-beta
 brew install --cask transmit
 brew install --cask vagrant
 brew install --cask virtualbox

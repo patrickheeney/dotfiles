@@ -24,6 +24,7 @@ brew upgrade
 # Some taps 0 depreciated
 #brew tap homebrew/dupes
 #brew tap homebrew/versions
+brew tap homebrew/cask-versions
 
 # System and apps
 ./brew-system.sh

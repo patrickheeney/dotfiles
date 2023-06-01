@@ -18,7 +18,11 @@ brew install gpg
 # Install nodejs LTS
 export NODEJS_CHECK_SIGNATURES=no
 brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
-#brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION
+
+# Yarn
+# brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION
+corepack enable
+corepack prepare yarn@stable --activate
 
 # Reload to detect new paths
 # source "$HOME/.bash_profile"
@@ -31,7 +35,7 @@ source "$HOME/.zsh_profile"
 # fi
 
 # install latest yarn and npm
-npm install --silent -g yarn@latest npm@latest
+#npm install --silent -g yarn@latest npm@latest
 #npm install --silent -g npm@latest
 
 # Fix npm symlinks for updating

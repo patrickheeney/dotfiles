@@ -63,12 +63,15 @@ sudo apt install rsync openssh-client
 # https://docs.microsoft.com/en-us/training/modules/explore-windows-package-manager-tool/
 # winget search [name]
 
+# Open Command Prompt as Administrator for following commands
+
 # System
 
 winget install -e --id Git.Git
 winget install -e --id Henry++.simplewall
 winget install -e --id Microsoft.PowerToys
 winget install -e --id RealVNC.VNCViewer
+winget install -e --id AppWork.JDownloader
 
 # keepass dependency - https://github.com/keepassxreboot/keepassxc/issues/7564
 winget install -e --id Microsoft.VC++2017Redist-x64
@@ -82,6 +85,7 @@ winget install -e --id Klocman.BulkCrapUninstaller
 
 winget install -e --id Mozilla.Firefox
 winget install -e --id Google.Chrome
+winget install -e --id Discord.Discord
 
 # Work
 
@@ -95,7 +99,7 @@ winget install -e --id BlenderFoundation.Blender
 # Affinity Designer
 # Affinity Publisher
 
-# Media
+# Media / Games
 
 winget install -e --id Valve.Steam
 winget install -e --id XBMCFoundation.Kodi
@@ -105,6 +109,14 @@ winget install -e --id ElectronicArts.EADesktop
 # PCSX2
 # RPCS3
 # Launchbox
+
+winget install -e --id Microsoft.DirectX
+winget install -e --id Nvidia.PhysX
+winget install -e --id Microsoft.XNARedist
+winget install -e --id Microsoft.VCRedist.2015+.x64
+
+# SM64
+winget install -e --id MSYS2.MSYS2
 
 # some sort of airplay or casting?
 
