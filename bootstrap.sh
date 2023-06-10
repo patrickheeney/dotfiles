@@ -36,17 +36,18 @@ has_program() {
 #
 log "Starting bootstrap..."
 
+# // Homrebrew should install this
 #
 # Install developer tools
 #
-if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
-  log "Running xcode license..."
-  log "If it fails, try checking for software updates, or, opening xcode to install required components and manually accept license"
-  sudo xcodebuild -license accept
-else
-  log "Installing xcode tools..."
-  xcode-select --install
-fi
+# if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
+#   log "Running xcode license..."
+#   log "If it fails, try checking for software updates, or, opening xcode to install required components and manually accept license"
+#   sudo xcodebuild -license accept
+# else
+#   log "Installing xcode tools..."
+#   xcode-select --install
+# fi
 
 #
 # Check if Homebrew is installed
@@ -54,8 +55,11 @@ fi
 log "Checking for homebrew"
 if ! has_program "brew"; then
   log "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   log "Finished installing homebrew"
+  log "Setup shell..."
+  echo 'eval "$(`which brew` shellenv)"' >> $HOME/.zprofile
+  eval "$(`which brew` shellenv)"
   log "Turning off homebrew analytics..."
   brew analytics off
 fi
