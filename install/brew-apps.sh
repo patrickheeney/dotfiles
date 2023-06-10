@@ -30,10 +30,10 @@ brew install --cask arq.rb
 ##mas install 497799835 #Xcode
 ##mas install 408981381 #iPhoto
 ##mas install 406056744 #Evernote
-mas install 515318186 #123DMake
-mas install 566042322 #123DDesign
+# mas install 515318186 #123DMake
+# mas install 566042322 #123DDesign
 #mas install 443987910 #1Password
-mas install 463362050 #PhotoSweeper
+# mas install 463362050 #PhotoSweeper
 #mas install 1000397973 #Wallcat
 ##mas install 404167149 #IP Scanner
 mas install 403388562 #Transmit
@@ -47,11 +47,11 @@ mas install 1295203466 #Microsoft Remote Desktop
 ##brew install --cask adobe-reader
 brew install --cask android-file-transfer
 brew install --cask appcleaner
-brew install --cask arq
+# brew install --cask arq # above
 brew install --cask authy
 brew install --cask balenaetcher
 brew install --cask beyond-compare
-brew install --cask blender
+# brew install --cask blender
 brew install --cask calibre
 brew install --cask carbon-copy-cloner
 brew install --cask cleanmymac
