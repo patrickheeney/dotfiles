@@ -6,7 +6,7 @@ ssh-keygen
 
 # set pemiersions on files
 chmod 600 ~/.ssh/*
-# find ~/.ssh -type f -exec chmod 600 {} +
+find ~/.ssh -type f -exec chmod 600 {} +
 find ~/.ssh -type f -name "*.pub" -exec chmod 644 {} +
 # chmod 644 ~/.ssh/authorized_keys
 
