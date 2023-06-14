@@ -24,31 +24,31 @@ get_mackup_resources() {
   mv mackup/mackup/applications .
   rm -fr mackup 
   for d in applications/*.cfg ; do
-    cat $d | sed -r '/^\s*$/d' | \
-             sed -r '/^\[/d' | \
+    cat $d | sed -r '/^\[/d' | \
              sed -r '/^name/d' | \
-             sed -r '/^#/d' >> apps.txt
+             sed -r '/^#/d' | \
+             sed -r '/^\s*$/d' >> apps.txt
   done
   rm -fr applications
-  cat apps.txt | sort > apps_sorted.txt
+  cat apps.txt | sed -r '/^\s*$/d' | sort > apps_sorted.txt
 }
 
 get_local_resources() {
   for d in ~/.mackup/*.cfg ; do
-    cat $d | sed -r '/^\s*$/d' | \
-             sed -r '/^\[/d' | \
+    cat $d | sed -r '/^\[/d' | \
              sed -r '/^name/d' | \
              sed -r '/^#/d' | \
-             sed -r '/^\//d' >> apps.txt
+             sed -r '/^\//d' | \
+             sed -r '/^\s*$/d' >> apps.txt
   done
-  cat apps.txt | sort > apps_sorted.txt
+  cat apps.txt | sed -r '/^\s*$/d' | sort > apps_sorted.txt
 }
 
 get_local_system_resources() {
   for d in ~/.mackup/*.cfg ; do
     cat $d | sed -r '/^\//!d' >> system.txt
   done
-  cat system.txt | sort > system_sorted.txt
+  cat system.txt | sed -r '/^\s*$/d' | sort > system_sorted.txt
 }
 
 # copy user files
