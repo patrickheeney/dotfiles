@@ -9,17 +9,18 @@
 # https://github.com/lra/mackup/issues/859
 #
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 DIR=$(date +%Y_%m_%d)
 
 # [ -d ~/.mackup ] || mkdir ~/.mackup
 # cd ~/.mackup
-[ -d ~/Mackup ] || mkdir ~/Mackup
-cd ~/Mackup
-[ -d backup_${DIR} ] || mkdir backup_${DIR}
-cd backup_${DIR}
+[ -d $SCRIPT_DIR/../backups ] || mkdir $SCRIPT_DIR/../backups
+cd $SCRIPT_DIR/../backups
+[ -d mackup_${DIR} ] || mkdir mackup_${DIR}
+cd mackup_${DIR}
 
 get_mackup_resources() {
-  git clone https://github.com/lra/mackup
+  git clone --depth 1 --branch master https://github.com/lra/mackup
   mv mackup/mackup/applications .
   rm -fr mackup 
   for d in applications/*.cfg ; do
@@ -51,24 +52,32 @@ get_local_system_resources() {
 }
 
 # copy user files
+echo "Generating mackup apps..."
 get_mackup_resources
+
+echo "Generating local apps"
 get_local_resources
+
+echo "Sync user files..."
 [ -d user ] || mkdir user
 rsync -aLkru ~/ \
  --files-from=apps_sorted.txt \
  --ignore-errors \
+ --ignore-missing-args \
  user/
 
 # copy system files
+echo "Sync system files..."
 get_local_system_resources
 [ -d system ] || mkdir system
 rsync -aLkru / \
   --files-from=system_sorted.txt \
   --ignore-errors \
+  --ignore-missing-args \
   system/
 
 # vscode extensions
 # https://github.com/lra/mackup/issues/1606#issuecomment-664344070
 # https://stackoverflow.com/questions/35773299/how-can-you-export-the-visual-studio-code-extension-list
+echo "Generate vscode files..."
 code --list-extensions > vscode_extensions_list.txt;
-
