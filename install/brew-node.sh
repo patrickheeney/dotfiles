@@ -21,12 +21,12 @@ brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
 
 # Yarn
 # brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION
-corepack enable
-corepack prepare yarn@stable --activate
+# corepack enable
+# corepack prepare yarn@stable --activate
 
 # Reload to detect new paths
 # source "$HOME/.bash_profile"
-source "$HOME/.zsh_profile"
+source "$HOME/.zshrc"
 
 # bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 # if [ $(id -u) -eq "0" ]; then

@@ -43,14 +43,6 @@ find "$DIR/../git" -type f -name '*' -print0 | while IFS= read -r -d '' location
   link "$MAINDIR/git/$newfile" "$HOME/.$newfile"
 done
 
-# Symlink app files
-find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
- newfile=$( basename "$location" )
- #echo "$location"
- #echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
- link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
-done
-
 # Symlink app dirs
 find "$DIR/../apps" -type d -maxdepth 1 -name '*' -print0 | while IFS= read -r -d '' location; do
  newfile=$( basename "$location" )
@@ -59,6 +51,14 @@ find "$DIR/../apps" -type d -maxdepth 1 -name '*' -print0 | while IFS= read -r -
  link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
 done
 
+# Symlink app files
+find "$DIR/../apps" -type f -name '*' -print0 | while IFS= read -r -d '' location; do
+ newfile=$( basename "$location" )
+ #echo "$location"
+ #echo "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+ link "$MAINDIR/apps/$newfile" "$HOME/.$newfile"
+done
+
 # Reset settings
 # source "$HOME/.bash_profile"
-source "$HOME/.zsh_profile"
+source "$HOME/.zshrc"

@@ -20,9 +20,7 @@ mas signin --dialog "$MAINEMAIL"
 
 brew install --cask lulu
 brew install --cask keepassxc
-#brew install --cask https://raw.githubusercontent.com/Homebrew/homebrew-cask/206dcaf0333492234157167941d23ef4d40176e9/Casks/arq.rb
-curl -L https://raw.githubusercontent.com/Homebrew/homebrew-cask/206dcaf0333492234157167941d23ef4d40176e9/Casks/arq.rb
-brew install --cask arq.rb
+brew install --cask ./arq.rb
 
 # mac app store
 ##mas install 405399194 #Kindle
@@ -38,9 +36,11 @@ brew install --cask arq.rb
 ##mas install 404167149 #IP Scanner
 mas install 403388562 #Transmit
 mas install 784801555 #Microsoft OneNote
+mas install 1295203466 #Microsoft Remote Desktop
+mas install 823766827 #Microsoft OneDrive
 mas install 409201541 #Pages
 mas install 409203825 #Numbers
-mas install 1295203466 #Microsoft Remote Desktop
+mas install 1444636541 #Photomator
 
 # apps
 ##brew install --cask adobe-creative-cloud
@@ -57,7 +57,9 @@ brew install --cask carbon-copy-cloner
 brew install --cask cleanmymac
 brew install --cask cyberduck
 brew install --cask daisydisk
+brew install --cask dbngin
 ##brew install --cask disk-drill
+brew install --cask discord
 brew install --cask dropbox
 brew install --cask firefox
 brew install --cask fontbase
@@ -67,6 +69,7 @@ brew install --cask google-chrome
 brew install --cask github
 brew install --cask insomnia
 brew install --cask iterm2
+brew install --cask jdownloader
 brew install --cask keka
 brew install --cask kindle
 brew install --cask launchcontrol
@@ -74,16 +77,15 @@ brew install --cask launchcontrol
 brew install --cask quicken
 brew install --cask scansnap-manager
 brew install --cask sequel-pro
-brew install --cask sketch
+#brew install --cask sketch #manual
 brew install --cask sourcetree
 brew install --cask spotify
 brew install --cask sublime-text
 brew install --cask tableplus
 brew install --cask teamviewer
 brew install --cask thunderbird-beta
+brew install --cask tor-browser
 brew install --cask transmit
-brew install --cask vagrant
-brew install --cask virtualbox
 brew install --cask vlc
 brew install --cask visual-studio-code
 #brew install --cask wineskin-winery
