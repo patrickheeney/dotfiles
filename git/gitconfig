@@ -1,6 +1,6 @@
 [user]
-	name = patrickheeney
-	email = patrickheeney@gmail.com
+	name = Patrick Heeney
+	email = 1407228+patrickheeney@users.noreply.github.com
 
 [github]
 	user = patrickheeney
@@ -12,7 +12,6 @@
 	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 	no-whitespace = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
-
 
 [core]
 	excludesfile = ~/.gitignore
