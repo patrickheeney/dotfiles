@@ -17,7 +17,12 @@ brew install gpg
 
 # Install nodejs LTS
 export NODEJS_CHECK_SIGNATURES=no
-brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
+# brew_install_asdf_plugin_version nodejs $ASDF_NODE_VERSION
+asdf plugin-add nodejs
+asdf plugin-update nodejs
+# use arch x86_64 due to issues with arm
+arch -x86_64 asdf install nodejs $ASDF_NODE_VERSION
+asdf global nodejs $ASDF_NODE_VERSION
 
 # Yarn
 # brew_install_asdf_plugin_version yarn $ASDF_YARN_VERSION

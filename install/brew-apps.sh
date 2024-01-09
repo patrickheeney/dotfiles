@@ -52,6 +52,7 @@ brew install --cask authy
 brew install --cask balenaetcher
 brew install --cask beyond-compare
 # brew install --cask blender
+brew install --cask bruno
 brew install --cask calibre
 brew install --cask carbon-copy-cloner
 brew install --cask cleanmymac
@@ -67,7 +68,7 @@ brew install --cask google-chrome
 ##brew install --cask google-chrome-canary
 #brew install --cask google-drive-file-stream
 brew install --cask github
-brew install --cask insomnia
+# brew install --cask insomnia
 brew install --cask iterm2
 brew install --cask jdownloader
 brew install --cask keka
