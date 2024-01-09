@@ -22,7 +22,7 @@ ARGV.each do |f|
       next
     end
 
-    match_image = /.*?(\d\d\d\d)-(\d\d)-\d\d \d\d.\d\d.\d\d.*\.(jpg|heic|png|aae)$/i.match file
+    match_image = /.*?(\d\d\d\d)-(\d\d)-\d\d \d\d.\d\d.\d\d.*\.(jpg|jpeg|heic|png|aae)$/i.match file
     if match_image
       year = match_image[1]
       month = match_image[2]
@@ -36,7 +36,7 @@ ARGV.each do |f|
       next
     end
 
-    match_imageremain = /.*?\.(jpg|heic|png|aae)$/i.match file
+    match_imageremain = /.*?\.(jpg|jpeg|heic|png|aae)$/i.match file
     if match_imageremain
       folder = File.join(root_dir, "Unmatched")
       move_file(folder, file)

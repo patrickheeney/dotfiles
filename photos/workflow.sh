@@ -74,7 +74,7 @@ if has_program "exiftool"; then
         # # date1="$(exiv2 -g Exif.Image.DateTime -Pv "$location")"
         # echo $date1
 
-        date2="$(exiftool -CreateDate -d '%Y-%m-%d %H.%M.%S' -S -s "$location")"
+        date2="$(exiftool -CreationDate -CreateDate -d '%Y-%m-%d %H.%M.%S' -S -s "$location" | head -n 1)"
         # echo $date2
 
         if [[ -z $date2 || $date2 == "" ]]; then
